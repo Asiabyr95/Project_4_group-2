@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+        <script type="text/javascript" src="static/js/tableau_api1.js"></script>
+        <!DOCTYPE html>
+                
+                <!-- boilerplate -->
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+                <!-- content -->
+                <title>Darkweb MarketPlace Analysis</title>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+        
+                <!-- scripts -->
+                <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> <!-- includes Popper.js -->
+        
+            </head>
+    {% block content %}
+
+<body>
+        <!-- header section -->
+        <div class="container-fluid bg-dark text-white text-center py-4">
+            <h1>DarkWeb MarketPlace Analysis</h1>
+        </div>
+
+        <!-- navbar section -->
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/tableau1" class="nav-link">Tableau1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/tableau2" class="nav-link">Tableau2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/model" class="nav-link">Model</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/report" class="nav-link">Report</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about_us" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/sources" class="nav-link">Sources</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- content section -->
+        <div class="container mt-4">
+        </div>
+<div class="row bg-light p-5 text-center"></div>
+    
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h2>Meet the Team</h2>
+            <p>Here are the people who contributed to this project</p>
+        </div>
+    
+        <div class="row justify-content-center text-center g-4">
+            <div class="col-md-4">
+                <h5>Cassidy Bell</h5>
+                <p>GitHub:<br><a href="https://github.com/cvbell624" target="_blank">cvbell624</a></p>
+            </div>
+    
+            <div class="col-md-4">
+                <h5>Asia Byrne</h5>
+                <p>GitHub:<br><a href="https://github.com/Asiabyr95" target="_blank">Asiabyr95</a></p>
+            </div>
+    
+            <div class="col-md-4">
+                <h5>Aaron Suarez</h5>
+                <p>GitHub:<br><a href="https://github.com/Apeterson07" target="_blank">Apeterson07</a></p>
+            </div>
+    
+            <div class="col-md-4">
+                <h5>William Berry</h5>
+                <p>GitHub:<br><a href="https://github.com/wcberry3" target="_blank">wcberry3</a></p>
+            </div>
+    
+            <div class="col-md-4">
+                <h5>Shahla Shahnawaz</h5>
+                <p>GitHub:<br><a href="https://github.com/shlwxz" target="_blank">shlwxz</a></p>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</div>
+{% endblock %}
