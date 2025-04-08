@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocaine Trade on the DarkNet</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Cocaine Trade on the DarkNet</h2>
+    <hr>
+
+    <div class="card border-primary">
+      <div class="card-body">
+        <form id="predictionForm">
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="grams">Grams:</label>
+              <input type="number" id="grams" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label for="quality">Quality:</label>
+              <input type="number" id="quality" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label for="successful_transactions">Successful Transactions:</label>
+              <input type="number" id="successful_transactions" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="rating">Rating (1-5):</label>
+              <input type="number" min="1" max="5" id="rating" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="product_title_sentiment">Product Title Sentiment:</label>
+              <select id="product_title_sentiment" class="form-control" required>
+                <option value="positive">Positive</option>
+                <option value="neutral">Neutral</option>
+                <option value="negative">Negative</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Predict</button>
+          </div>
+        </form>
+        <br>
+        <div id="predictionResult" class="text-center h4 text-success"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#predictionForm').on('submit', function (e) {
+      e.preventDefault();
+
+      const data = {
+        grams: parseFloat($('#grams').val()),
+        quality: parseFloat($('#quality').val()),
+        successful_transactions: parseFloat($('#successful_transactions').val()),
+        rating: parseFloat($('#rating').val()),
+        product_title_sentiment: $('#product_title_sentiment').val()
+      };
+
+      $.ajax({
+        url: '/predictions',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ data: data }),
+        success: function (response) {
+          $('#predictionResult').text('Prediction: ' + response.prediction);
+        },
+        error: function () {
+          $('#predictionResult').text('Error during prediction.');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
