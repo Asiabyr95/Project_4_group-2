@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter title here</title>
+    <title>Cocaine in Context</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -14,43 +14,64 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     <script type="text/javascript" src="static/js/tableau_api1.js"></script>
+    <!DOCTYPE html>
+            
+            <!-- boilerplate -->
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+            <!-- content -->
+            <title>Cocaine in Context</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    
+            <!-- scripts -->
+            <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> <!-- includes Popper.js -->
+    
+        </head>
+    
+        <body>
+    
+            <!-- header section -->
+            <div class="container-fluid bg-dark text-white text-center py-4">
+                <h1>DarkWeb MarketPlace Analysis</h1>
+            </div>
+    
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-plane"></i> Flight Satisfaction Home
-            </a>
-            <ul class="navbar-nav me-auto">
-                <!-- <li class="nav-item"><a class="nav-link" href="/">Home</a></li> -->
-                <li class="nav-item"><a class="nav-link" href="/tableau2">Airline Satisfaction</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/tableau1">Demographic Satisfaction</a></li>
-                <li class="nav-item"><a class="nav-link" href="/model">Passenger Satisfaction Predictor</a></li>
-                <li class="nav-item"><a class="nav-link" href="/report">Report</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about_us">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="/sources">Sources</a></li>
-            </ul>
-        </div>
+     <!-- navbar section -->
+     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a href="/" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/tableau1" class="nav-link">Tableau1</a>
+            </li>
+            <li class="nav-item">
+                <a href="/tableau2" class="nav-link">Tableau2</a>
+            </li>
+            <li class="nav-item">
+                <a href="/model" class="nav-link">Model</a>
+            </li>
+            <li class="nav-item">
+                <a href="/report" class="nav-link">Report</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about_us" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="/sources" class="nav-link">Sources</a>
+            </li>
+        </ul>
     </nav>
 
     <div class="container-fluid">
         <div class="card text-center">
-            <h1>Enter title here</h1>
+            <h1>Cocaine in Context</h1>
         </div>
 
         <hr>
-
-        <div class="card text-center">
-            <h3>Toolbar</h3>
-            <div style="display: inline-block;">
-                <button type="button" class="btn btn-primary" id="pdf">PDF</button>
-                <button type="button" class="btn btn-primary" id="image">Image</button>
-                <button type="button" class="btn btn-primary" id="crosstab">Crosstab</button>
-                <button type="button" class="btn btn-primary" id="data">Data</button>
-                <button type="button" class="btn btn-danger" id="revert">Revert</button>
-            </div>
-        </div>
 
         <!-- The div where we will inject our Tableau -->
         <div id="tableauParent" class="container-fluid just">
@@ -58,6 +79,22 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        // This function will run after the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            const placeholderDiv = document.getElementById("tableauViz");
+            const url = "https://public.tableau.com/views/CocaineinContextPriceRatingAnalysis/Dashboard1";
+    
+            const options = {
+                hideTabs: true,
+                width: "100%",
+                height: "1300px"
+            };
+    
+            // Create the Tableau Viz
+            new tableau.Viz(placeholderDiv, url, options);
+        });
+    </script>
 </body>
 
 </html>

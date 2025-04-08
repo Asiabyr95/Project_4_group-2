@@ -15,11 +15,10 @@ class ModelHelper():
         df["successful_transactions"] = [successful_transactions]
         df["rating"] = [rating]
         df["product_title_sentiment"] = [product_title_sentiment]
-       
 
         # columns in order
         df = df.loc[:, ['grams', 'quality', 'successful_transactions', 'rating',
         'product_title_sentiment']]
         
-        preds = self.model.predict_proba(df)
+        preds = self.model.predict(df)
         return(preds[0][1])

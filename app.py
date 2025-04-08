@@ -33,7 +33,13 @@ def tableau2():
 # HTML ROUTES - MODEL
 @app.route("/model")
 def model():
-    return render_template("index.html")
+    return render_template("model.html")
+
+# HTML ROUTES - Report 
+@app.route("/report")
+def report():
+    return render_template("report.html")
+
 # HTML ROUTES - ABOUT US 
 @app.route("/about_us")
 def about_us():
