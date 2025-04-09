@@ -53,7 +53,7 @@ def sources():
 @app.route("/predictions", methods=["POST"])
 def predictions():
     content = request.json["data"]
-    print(content)
+    
 
     # parse
     grams = content["grams"]
@@ -61,12 +61,11 @@ def predictions():
     successful_transactions = content ['successful_transactions']
     rating = content ['rating']
     product_title_sentiment = content ['product_title_sentiment']
-    #escrow = content ['escrow']
-    #ships_to = content ['ships_to']
-    #ships_from = content ['ships_from']
+    ships_to = content ['ships_to']
+    ships_from = content ['ships_from']
 
     
-    preds = modelHelper.predictions(grams, quality, successful_transactions, rating, product_title_sentiment)
+    preds = modelHelper.predictions(grams, quality, successful_transactions, rating, product_title_sentiment, ships_to, ships_from)
 
     return(jsonify({"ok": True, "prediction": str(preds)}))
 
