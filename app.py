@@ -61,6 +61,9 @@ def predictions():
     successful_transactions = content ['successful_transactions']
     rating = content ['rating']
     product_title_sentiment = content ['product_title_sentiment']
+    #escrow = content ['escrow']
+    #ships_to = content ['ships_to']
+    #ships_from = content ['ships_from']
 
     
     preds = modelHelper.predictions(grams, quality, successful_transactions, rating, product_title_sentiment)
