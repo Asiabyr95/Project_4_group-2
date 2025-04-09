@@ -93,10 +93,56 @@
               <label for="product_title_sentiment">Product Title Sentiment:</label>
               <select id="product_title_sentiment" class="form-control" required>
                 <option value="positive">Positive</option>
-                <option value="neutral">Neutral</option>
                 <option value="negative">Negative</option>
               </select>
             </div>
+          </div>
+
+          <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="ships_to">Ships To:</label>
+            <select id="ships_to" class="form-control" required>
+              <option value="AU">Australia</option>
+              <option value="BE">Belgium</option>
+              <option value="BR">Brazil</option>
+              <option value="CA">Canada</option>
+              <option value="CH">Switzerland</option>
+              <option value="CN">China</option>
+              <option value="CZ">Czech Republic</option>
+              <option value="DE">Germany</option>
+              <option value="ES">Spain</option>
+              <option value="EU">European Union</option>
+              <option value="FR">France</option>
+              <option value="GB">United Kingdom</option>
+              <option value="IT">Italy</option>
+              <option value="NL">Netherlands</option>
+              <option value="SE">Sweden</option>
+              <option value="US">United States</option>
+              <option value="WW">WorldWide</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="ships_from">Ships From:</label>
+            <select id="ships_from" class="form-control" required>
+              <option value="AU">Australia</option>
+              <option value="BE">Belgium</option>
+              <option value="BR">Brazil</option>
+              <option value="CA">Canada</option>
+              <option value="CH">Switzerland</option>
+              <option value="CN">China</option>
+              <option value="CZ">Czech Republic</option>
+              <option value="DE">Germany</option>
+              <option value="ES">Spain</option>
+              <option value="EU">European Union</option>
+              <option value="FR">France</option>
+              <option value="GB">United Kingdom</option>
+              <option value="IT">Italy</option>
+              <option value="NL">Netherlands</option>
+              <option value="SE">Sweden</option>
+              <option value="US">United States</option>
+              <option value="WW">WorldWide</option>
+            </select>
           </div>
 
           <div class="text-center">
@@ -118,7 +164,9 @@
         quality: parseFloat($('#quality').val()),
         successful_transactions: parseFloat($('#successful_transactions').val()),
         rating: parseFloat($('#rating').val()),
-        product_title_sentiment: $('#product_title_sentiment').val()
+        product_title_sentiment: $('#product_title_sentiment').val(),
+        ships_to: $('#ships_to').val(),
+        ships_from: $('#ships_from').val()
       };
 
       $.ajax({

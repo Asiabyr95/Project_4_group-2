@@ -5,9 +5,9 @@ import numpy as np
 class ModelHelper():
     def __init__(self):
         # model
-        self.model = pickle.load(open("model.pkl", 'rb'))
+        self.model = pickle.load(open("model_fixed.pkl", 'rb'))
 
-    def predictions(self, grams, quality, successful_transactions, rating, product_title_sentiment):
+    def predictions(self, grams, quality, successful_transactions, rating, product_title_sentiment, ships_to, ships_from):
         sentiment_mapping = {"positive": 1, "negative": 0}
         
         df = pd.DataFrame()
@@ -18,16 +18,14 @@ class ModelHelper():
         df["product_title_sentiment"] = [product_title_sentiment]
         df["product_title_sentiment"] = df["product_title_sentiment"].apply(lambda x: sentiment_mapping[x])
         
-        # df["escrow"] = [escrow]
-        df["escrow"] = [1]
-        # df["ships_to"] = [ships_to]
-        df["ships_to"] = ["FR"]
-        # df["ships_from"] = [ships_from]
-        df["ships_from"] = ["EU"]
+        df["ships_to"] = [ships_to]
+        df["ships_from"] = [ships_from]
+       
 
         # columns in order
         df = df.loc[:, ['grams', 'quality', 'successful_transactions', 'rating',
-        'product_title_sentiment', 'escrow', 'ships_to', 'ships_from']]
+        'product_title_sentiment', 'ships_to', 'ships_from']]
         
+        print(df)
         preds = self.model.predict(df)
         return(preds[0])
